@@ -13,7 +13,7 @@ module.exports = {
   mode: 'development',
   // ビルドを実行するファイルパス
   entry: path.resolve(src, 'js/index.js'),
-  output:{
+  output: {
     // 生成されるファイル
     filename: 'index.bundle.js',
     // 生成先のディレクトリ
