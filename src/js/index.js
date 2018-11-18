@@ -1,10 +1,13 @@
+// @flow
 export class Hello {
-  constructor(name) {
+  name: string; // this.nameの型定義
+
+  constructor(name: string) {
     this.name = name;
     this.say();
   }
 
-  say() {
+  say(): void {
     console.log(`Hello ${this.name} World!`);
   }
 }
