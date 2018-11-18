@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // <Heading>コンポーネントを読み込む
 import Heading from './heading';
+// CSSファイルを読み込む
+import '../css/index.css';
 
 export class Render {
   constructor(targetId: string) {
