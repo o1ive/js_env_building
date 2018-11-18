@@ -17,13 +17,13 @@ module.exports = {
     // 生成されるファイル
     filename: 'index.bundle.js',
     // 生成先のディレクトリ
-    path: dist
+    path: dist,
   },
   resolve: {
     // import文のパス指定にnode_modulesを省略できるようにする
     modules: ['node_modules'],
     // .jsまたは.jsxの拡張子を省略できるようにする
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
@@ -32,22 +32,28 @@ module.exports = {
         test: /\.(js|jsx)$/,
         // nodemodules以下のファイルには適用しないようにする
         exclude: /node_modules/,
+        enforce: 'pre',
         // 使用するloader
-        loader: 'babel-loader'
-      }
-    ]
+        loader: 'eslint-loader',
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
   },
   devServer: {
-    contentBase: dist, //開発サーバを立ち上げる参照ディレクトリ
+    contentBase: dist, // 開発サーバを立ち上げる参照ディレクトリ
     hot: true, // hot-reloadを有効にする
-    port: 3000 //サーバのポート番号
+    port: 3000, // サーバのポート番号
   },
   plugins: [
     // hot-reloadを有効にするプラグイン
     new webpack.HotModuleReplacementPlugin(),
     // HtmlWebpackPluginプラグインを追加
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin(),
   ],
   // sourceMappingの設定
-  devtool: 'cheap-module-eval-source-map'
+  devtool: 'cheap-module-eval-source-map',
 };
