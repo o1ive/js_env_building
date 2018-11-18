@@ -12,7 +12,7 @@ module.exports = {
   // developmentモードで実行します
   mode: 'development',
   // ビルドを実行するファイルパス
-  entry: path.resolve(src, 'js/index.js'),
+  entry: path.resolve(src, 'js/render.jsx'),
   output: {
     // 生成されるファイル
     filename: 'index.bundle.js',
@@ -52,7 +52,10 @@ module.exports = {
     // hot-reloadを有効にするプラグイン
     new webpack.HotModuleReplacementPlugin(),
     // HtmlWebpackPluginプラグインを追加
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      // templateの設定を追加
+      template: path.resolve(src, 'html/index.html'),
+    }),
   ],
   // sourceMappingの設定
   devtool: 'cheap-module-eval-source-map',
