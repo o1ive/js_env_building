@@ -9,7 +9,8 @@
     "lint:js": "eslint './src/js/*.{js,jsx}'",
     "lint:fix": "eslint './src/js/*.{js,jsx}' --fix",
     "prettier": "prettier --write './src/js/*.{js,jsx}'",
-    "flow": "flow"
+    "flow": "flow",
+    "lint:css": "stylelint './src/css/*.css'"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -30,6 +31,8 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
     "prettier": "^1.15.2",
+    "stylelint": "^9.8.0",
+    "stylelint-config-standard": "^18.2.0",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
